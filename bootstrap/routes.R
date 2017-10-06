@@ -1,6 +1,6 @@
 # Put your routes here.
 
-routes <- mattR::createRoutes(
+routes <- list(
   c("^/.*$", mattR::staticView(file.path(getwd(), "static/"), "/"))
 )
 

@@ -1,7 +1,7 @@
 library(mattR)
 library(shiny)
 
-plotPage <- function(params) {
+plotPage <- function(resp, req, params) {
   slope <- as.numeric(params[["slope"]])
   intercept <- as.numeric(params[["intercept"]])
 
@@ -17,8 +17,11 @@ plotPage <- function(params) {
   } else {
     ""
   }
-  renderTemplate(file.path(getwd(), "static", "plot.html"),
-                 list(image = imageUrl))
+  resp[["body"]] <- renderTemplate(file.path(getwd(),
+                                             "static", "plot.html"),
+                                   list(image = imageUrl))
+  resp[["status"]] <- 200L
+  resp
 }
 
 

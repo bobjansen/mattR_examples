@@ -1,7 +1,7 @@
 # Put your routes here.
 source("calculator.R")
 
-routes <- mattR::createRoutes(
+routes <- list(
   c("^/.*$", mattR::genericView(calculate))
 )
 
