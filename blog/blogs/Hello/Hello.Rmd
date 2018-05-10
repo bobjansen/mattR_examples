@@ -1,0 +1,10 @@
+# Hello World!
+
+Say hello to my cars
+
+```{r, echo = FALSE}
+print(head(mtcars))
+library(ggplot2)
+ggplot(data.frame(x=c(0, 10)), aes(x)) +
+    stat_function(fun=cos) + stat_function(fun=sin) + theme_bw()
+```
